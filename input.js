@@ -1,6 +1,9 @@
+import {
+  togglePause
+} from './game.js'
 let inputDirection = { x: 0, y: 0 }
 let lastInputDirection = { x: 0, y: 0 }
-
+export var pausemenutoggle = false;
 window.addEventListener('keydown', e => {
   switch (e.key) {
     case 'ArrowUp':
@@ -19,6 +22,10 @@ window.addEventListener('keydown', e => {
       if (lastInputDirection.x !== 0) break
       inputDirection = { x: 1, y: 0 }
       break
+  }
+  if (e.key == "p") {
+    pausemenutoggle = !pausemenutoggle;
+    togglePause(pausemenutoggle);
   }
 })
 

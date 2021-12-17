@@ -60,7 +60,6 @@ export function onSnakeButColor(color) {
   lastSnakeColor = color;
   fruitEaten_Score += 1;
   SNAKE_SPEED +=0.25;
-  console.log(fruitEaten_Score);
 }
 
 export function getSnakeHead() {

@@ -4,14 +4,17 @@ import {
     SNAKE_SPEED
 } from './snake.js'
 import {
-    togglePause
+    highscore
 } from './game.js'
 var scoreBoard = document.querySelector("#score-board")
 var controlPanel = document.querySelector("#control-panel")
 let menuBoard = document.querySelector("#menu-board")
 let menuNotif = document.querySelector("#menu-notification")
+let menuSubNotif = document.querySelector("#menu-sub-notification")
 let score
-
+var oldHighScore = sessionStorage.getItem("oldHighScore");
+    sessionStorage.setItem("oldHighScore", sessionStorage.getItem("highscore"));
+    console.log(sessionStorage.getItem("highscore"),oldHighScore);
 export function update() {
     score = SNAKE_SPEED - 4;
     scoreBoard.style.backgroundColor = lastSnakeColor;
@@ -20,6 +23,7 @@ export function update() {
 }
 export function menuPopup(notif) {
     menuNotif.innerHTML = notif;
+    displayHighestScore();
     menuBoard.style.opacity = "1";
     menuBoard.style.zIndex = "1";
     if (notif == "Paused") {
@@ -38,4 +42,12 @@ export function menuPopup(notif) {
 export function menuHidedown() {
     menuBoard.style.opacity = "0";
     menuBoard.style.zIndex = "-1";
+}
+
+export function displayHighestScore() {
+    // if (fruitEaten_Score > oldHighScore) {
+    //     menuSubNotif.innerHTML = "NEW HIGHSCORE!!! : " + highscore;
+    // } else {
+    menuSubNotif.innerHTML = "Current highscore is: " + highscore;
+    // }
 }

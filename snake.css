@@ -42,7 +42,18 @@ body {
     color: #FFF;
     font-weight: bold;
     font-size: 10vw;
-    width: 10vw;
+    width: 25vw;
+    height: 10vh;
+}
+#menu-sub-notification {
+    margin-top: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 2vw;
+    width: 25vw;
     height: 10vh;
 }
 
@@ -56,6 +67,8 @@ body {
     background-color: red;
     width: 10vw;
     height: 10vh;
+    opacity: 1;
+    transition: opacity 0.5s;
 }
 
 #control-panel {

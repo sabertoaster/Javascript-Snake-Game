@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,14 +10,21 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="game.js" defer type="module"></script>
 </head>
+
 <body>
   <div id="menu-board">
-    <div id="menu-notification"></div>
+    <div>
+      <div id="menu-notification"></div>
+      <div id="menu-sub-notification"></div>
+    </div>
     <button id="menu-btn1" onclick="document.location.reload()">Restart</button>
   </div>
   <div id="score-board"></div>
-  <div id="game-board">
+  <div id="game-board"></div>
+  <div id="control-panel">
+    <div>Current Speed:</div>
+    <div></div>
   </div>
-  <div id="control-panel"><div>Current Speed:</div><div></div></div>
 </body>
+
 </html>

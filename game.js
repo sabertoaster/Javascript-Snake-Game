@@ -23,7 +23,7 @@ import {
 
 export var highscore = sessionStorage.getItem("highscore");
 let lastRenderTime = 0
-let gameOver = false;
+export var gameOver = false;
 let globalId; //pause machine
 alert("Dùng phím p để dừng, phím mũi tên để di chuyển")
 

@@ -84,12 +84,14 @@ body {
     height: 10vh;
 }
 
-.snake {
-    /* background-color: hsl(200, 100%, 50%); */
+/* .snake {
+    background-color: hsl(200, 100%, 50%); 
 
-}
+} */
 
 .food {
     /* background-color: hsl(50, 100%, 50%); */
-    border: 2vmin solid #CCC;
+    border: 5px solid #CCC;
+    border-radius: 50% ;
+    box-shadow: 5px 5px 50px black;
 }

@@ -1,5 +1,5 @@
-export const GRID_SIZE = 10
-
+export const GRID_SIZE = Number(localStorage.getItem("settingsGrid"));
+console.log(GRID_SIZE);
 export function randomGridPosition() {
   return {
     x: Math.floor(Math.random() * GRID_SIZE) + 1,

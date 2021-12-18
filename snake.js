@@ -10,16 +10,15 @@ const snakeBody = [{
   color: "blue",
   x: Math.floor(GRID_SIZE / 2),
   y: Math.floor(GRID_SIZE / 2),
-  border_top: "5px solid black",
-  border_bot: "5px solid black",
-  border_left: "5px solid black",
-  border_right: "5px solid black",
 }] //snake initialization
+var snakeHead = snakeBody[0]
+var snakeTail
 let newSegments = 0
 export var lastSnakeColor;
 export var fruitEaten_Score = 0;
 export function update() {
   addSegments()
+  snakeTail = snakeBody[snakeBody.length-1];
   const inputDirection = getInputDirection()
   for (let i = snakeBody.length - 1; i > 0; i--) {
     let tempx = snakeBody[i - 1].x
@@ -27,41 +26,11 @@ export function update() {
     snakeBody[i].x = tempx;
     snakeBody[i].y = tempy;
   }
-  for (let i = snakeBody.length - 1; i > 1; i--) {
-    let temp_border_top = snakeBody[i - 1].border_top
-    let temp_border_bot = snakeBody[i - 1].border_bot
-    let temp_border_left = snakeBody[i - 1].border_left
-    let temp_border_right = snakeBody[i - 1].border_right
-    snakeBody[i].border_top = temp_border_top;
-    snakeBody[i].border_bot = temp_border_bot;
-    snakeBody[i].border_left = temp_border_left;
-    snakeBody[i].border_right = temp_border_right;
-  }
   if (snakeBody.length > 1) {
     snakeBody[snakeBody.length - 1].color = lastSnakeColor;
   }
-  snakeBody[0].border_top = "0.5vmin solid black"
-  snakeBody[0].border_bot = "0.5vmin solid black"
-  snakeBody[0].border_left = "0.5vmin solid black"
-  snakeBody[0].border_right = "0.5vmin solid black"
-  switch (inputDirection.x) {
-    case 1:
-      snakeBody[0].border_left = "0"
-      break;
-    case -1:
-      snakeBody[0].border_right = "0"
-      break;
-  }
-  switch (inputDirection.y) {
-    case 1:
-      snakeBody[0].border_top = "0"
-      break;
-    case -1:
-      snakeBody[0].border_bot = "0"
-      break;
-  }
-  snakeBody[0].x += inputDirection.x
-  snakeBody[0].y += inputDirection.y
+  snakeHead.x += inputDirection.x
+  snakeHead.y += inputDirection.y
 }
 
 export function draw(gameBoard) {
